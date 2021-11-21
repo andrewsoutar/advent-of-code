@@ -4,8 +4,12 @@
   (:export #:get-input #:run-solution #:today))
 (in-package #:com.andrewsoutar.aoc/aoc)
 
-(defparameter *session*
-  "53616c7465645f5f01eae5bbf4626725418d07e5c2e470bacc7ca9e74cddd08c40917ffa1df629cf77f79f26ad4435a4")
+(defparameter *secrets*
+  (with-open-file (secrets
+                   (asdf:system-relative-pathname #.(string-downcase (package-name *package*)) ".secrets.lisp-expr"))
+    (read secrets)))
+
+(defparameter *session* (cdr (assoc 'session *secrets*)))
 
 (defparameter *year* nil)
 (defparameter *day* nil)
