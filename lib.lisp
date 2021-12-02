@@ -1,7 +1,7 @@
 (uiop:define-package #:com.andrewsoutar.aoc/lib
   (:use #:cl #:com.andrewsoutar.brace-lambda #:named-readtables)
   (:use-reexport #:com.andrewsoutar.aoc)
-  (:use-reexport #:alexandria #:cl-ppcre #:cl-interpol #:iterate)
+  (:use-reexport #:alexandria #:cl-ppcre #:cl-interpol #:iterate #:com.andrewsoutar.matcher)
   (:export #:in-readtable #:aoc #:iter1 #:gcase #:scase #:flatarr))
 (in-package #:com.andrewsoutar.aoc/lib)
 
